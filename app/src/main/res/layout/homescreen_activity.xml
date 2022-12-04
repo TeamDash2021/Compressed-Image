@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_back">
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+
+        android:id="@+id/imageView2"
+        android:layout_width="407dp"
+        android:layout_height="785dp"
+
+        android:layout_marginStart="104dp"
+        android:layout_marginBottom="96dp"
+        android:background="@drawable/texture1304390"
+        android:elevation="10dp"
+        android:scaleType="center"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
+        app:strokeColor="@color/teal_200"
+        app:strokeWidth="1dp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="99dp"
+        android:elevation="15dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingRight="2dp">
+
+            <ImageButton
+                android:id="@+id/compressButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/custom_button"
+                android:backgroundTint="#E8D000"
+                android:elevation="20dp"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/compress"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp">
+
+            <ImageButton
+                android:id="@+id/cropButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/custom_button"
+                android:backgroundTint="#01C809"
+                android:elevation="20dp"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/crop1"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="2dp">
+
+            <ImageButton
+                android:id="@+id/iSettingsButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/custom_button"
+                android:backgroundTint="#000000"
+                android:elevation="20dp"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/isetting1"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="25dp"
+        android:text="Hello,"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.177" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

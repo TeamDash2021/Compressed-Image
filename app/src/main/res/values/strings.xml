@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Compress Image</string>
+    <string name="load_from_gallery">Load From Gallery</string>
+    <string name="load_from_camera">Load From Camera</string>
+    <string name="compress">Compress</string>
+    <string name="original_image">Original Image</string>
+    <string name="compress_image">Compressed Image</string>
+    <string-array name="imgquality">
+        <item>2401</item>
+        <item>1920</item>
+        <item>1080</item>
+        <item>720</item>
+        <item>640</item>
+        <item>480</item>
+    </string-array>
+
+</resources>
