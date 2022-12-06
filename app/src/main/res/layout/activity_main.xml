@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/rounded_corner"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,11 +14,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="2"
-        android:orientation="horizontal">
+        android:background="@drawable/rounded_corner"
+        android:elevation="100dp"
+        android:orientation="horizontal"
+        android:padding="5dp">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:background="@drawable/rounded_corner"
             android:layout_weight="1"
             android:orientation="vertical">
 
@@ -63,7 +68,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1.5"
                     android:gravity="center"
-                    android:text="Original Size:"
+                    android:text="Size:"
                     android:textColor="#000000"
                     android:textSize="18sp"
                     android:textStyle="bold|italic" />
@@ -74,7 +79,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1.5"
                     android:gravity="center"
-                    android:text="New Size:"
+                    android:text="Size:"
                     android:textColor="#000000"
                     android:textSize="18sp"
                     android:textStyle="bold|italic" />
@@ -90,8 +95,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="10dp"
-
         android:layout_weight="1"
+        android:background="@drawable/rounded_corner"
+        android:elevation="100dp"
         android:orientation="horizontal">
 
         <ImageView
@@ -99,7 +105,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/rounded_corner"
+
+            android:background="#FCFCFC"
             app:srcCompat="@mipmap/ic_launcher" />
 
         <ImageView
@@ -107,8 +114,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/rounded_corner"
-
+            android:background="#FCFCFC"
             app:srcCompat="@mipmap/ic_launcher" />
     </LinearLayout>
 
@@ -116,6 +122,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1.5"
+        android:elevation="100dp"
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
@@ -124,6 +131,10 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:layout_weight="0"
+            android:background="@drawable/rounded_corner"
+            android:elevation="50dp"
+            app:boxBackgroundColor="#A52121"
+            app:boxStrokeColor="#00A630"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -132,8 +143,9 @@
             <AutoCompleteTextView
                 android:id="@+id/autoCompleteTextView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:background="@drawable/rounded_corner"
                 android:inputType="none"
                 android:text="Choose Image Quality" />
 
@@ -143,6 +155,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0"
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="#4BFF56"
+            android:elevation="50dp"
             android:orientation="horizontal">
 
             <ImageButton
@@ -151,8 +166,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/custom_button"
-                android:backgroundTint="#69E86E"
-                android:scaleType="centerCrop"
+                android:backgroundTint="#4BFF56"
+                android:scaleType="fitCenter"
                 android:src="@android:drawable/ic_menu_gallery"
                 android:text="@string/load_from_gallery"
                 tools:ignore="SpeakableTextPresentCheck" />
@@ -163,8 +178,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/custom_button"
-                android:backgroundTint="#69EF6F"
-                android:scaleType="centerInside"
+                android:backgroundTint="#4BFF56"
+                android:scaleType="fitCenter"
                 android:text="@string/load_from_camera"
                 app:srcCompat="@drawable/camera1" />
 
@@ -173,8 +188,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/custom_button"
-                android:text="@string/compress" />
+                android:background="#BFB4B4"
+                android:foregroundTint="#0BF814"
+                android:text="@string/compress"
+                android:textColor="#E8E2E0" />
         </LinearLayout>
 
     </LinearLayout>
