@@ -10,11 +10,11 @@
     <com.google.android.material.imageview.ShapeableImageView
 
         android:id="@+id/imageView2"
-        android:layout_width="407dp"
-        android:layout_height="785dp"
+        android:layout_width="387dp"
+        android:layout_height="944dp"
 
-        android:layout_marginStart="104dp"
-        android:layout_marginBottom="96dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginBottom="68dp"
         android:background="@drawable/texture1304390"
         android:elevation="10dp"
         android:scaleType="center"
@@ -22,14 +22,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
-        app:strokeColor="@color/teal_200"
-        app:strokeWidth="1dp" />
+        app:strokeColor="@color/purple_500"
+        app:strokeWidth="3dp" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="99dp"
-        android:elevation="15dp"
+        android:elevation="25dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,6 +42,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:clipToPadding="false"
+            android:elevation="50dp"
             android:orientation="vertical"
             android:paddingRight="2dp">
 
@@ -51,8 +52,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/custom_button"
-                android:backgroundTint="#E8D000"
-                android:elevation="20dp"
+                android:backgroundTint="#D507450B"
+                android:elevation="200dp"
                 android:scaleType="centerInside"
                 app:srcCompat="@drawable/compress"
                 tools:ignore="SpeakableTextPresentCheck" />
@@ -62,6 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:elevation="50dp"
             android:orientation="vertical"
             android:paddingLeft="2dp"
             android:paddingRight="2dp">
@@ -72,8 +74,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/custom_button"
-                android:backgroundTint="#01C809"
-                android:elevation="20dp"
+                android:backgroundTint="#D8507152"
+                android:elevation="200dp"
                 android:scaleType="centerInside"
                 app:srcCompat="@drawable/crop1"
                 tools:ignore="SpeakableTextPresentCheck" />
@@ -83,6 +85,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:elevation="50dp"
             android:orientation="vertical"
             android:paddingLeft="2dp">
 
@@ -92,8 +95,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/custom_button"
-                android:backgroundTint="#000000"
-                android:elevation="20dp"
+                android:backgroundTint="#DD000000"
+                android:elevation="200dp"
                 android:scaleType="centerInside"
                 app:srcCompat="@drawable/isetting1"
                 tools:ignore="SpeakableTextPresentCheck" />
@@ -105,16 +108,18 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:elevation="25dp"
+        android:elegantTextHeight="true"
+        android:elevation="200dp"
         android:text="Hello,"
-        android:textAllCaps="true"
+        android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.397"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.177" />
+        app:layout_constraintVertical_bias="0.179" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
