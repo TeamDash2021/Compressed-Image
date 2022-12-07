@@ -13,8 +13,8 @@
         android:layout_width="387dp"
         android:layout_height="944dp"
 
-        android:layout_marginStart="96dp"
-        android:layout_marginBottom="68dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginBottom="52dp"
         android:background="@drawable/texture1304390"
         android:elevation="10dp"
         android:scaleType="center"
