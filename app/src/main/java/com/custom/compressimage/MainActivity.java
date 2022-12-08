@@ -68,10 +68,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.CAMERA},1);
         ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.VIBRATE},1);
-        ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
-        ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},1);
+        //ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},1);
 
         //get the spinner from the xml.
         autoCompleteTextView = findViewById(R.id.autoCompleteTextView);
@@ -130,12 +130,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         try{
         switch (v.getId()) {
             case R.id.activity_main_btn_load_from_gallery:
+                ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
+                ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},1);
                 Intent intentGalley = new Intent(Intent.ACTION_PICK);
                 intentGalley.setType("image/*");
                 startActivityForResult(intentGalley, PICK_GALLERY_IMAGE);
                 break;
             case R.id.activity_main_btn_load_from_camera:
-
+                //ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.CAMERA},1);
                 StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
                 StrictMode.setVmPolicy(builder.build());
 
