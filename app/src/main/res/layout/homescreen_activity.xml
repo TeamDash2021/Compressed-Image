@@ -25,52 +25,39 @@
         app:strokeColor="@color/purple_500"
         app:strokeWidth="3dp" />
 
+
     <ImageButton
         android:id="@+id/compressButton"
-        android:layout_width="355dp"
-        android:layout_height="195dp"
+        android:layout_width="167dp"
+        android:layout_height="180dp"
         android:background="@drawable/custom_button"
         android:backgroundTint="#D507450B"
         android:elevation="200dp"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.986"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.211"
+        app:layout_constraintVertical_bias="0.257"
         app:srcCompat="@drawable/compress"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/cropButton"
-        android:layout_width="355dp"
-        android:layout_height="195dp"
+        android:layout_width="169dp"
+        android:layout_height="162dp"
         android:background="@drawable/custom_button"
         android:backgroundTint="#D8507152"
         android:elevation="200dp"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.071"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.547"
+        app:layout_constraintVertical_bias="0.695"
         app:srcCompat="@drawable/crop1"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/iSettingsButton"
-        android:layout_width="355dp"
-        android:layout_height="195dp"
-        android:background="@drawable/custom_button"
-        android:backgroundTint="#DD000000"
-        android:elevation="200dp"
-        android:scaleType="centerInside"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.88"
-        app:srcCompat="@drawable/isetting1"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <LinearLayout
@@ -119,6 +106,17 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="208dp"
+        android:layout_height="204dp"
+        android:layout_marginStart="4dp"
+        android:src="@drawable/gif_cmp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.246" />
 
     <TextView
         android:id="@+id/textView2"

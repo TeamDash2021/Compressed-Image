@@ -29,7 +29,7 @@ public class HomeScreen extends AppCompatActivity {
         myVib = (Vibrator) this.getSystemService(VIBRATOR_SERVICE);
         compress = findViewById(R.id.compressButton);
         crop = findViewById(R.id.cropButton);
-        isettings = findViewById(R.id.iSettingsButton);
+        //isettings = findViewById(R.id.iSettingsButton);
         final Context context = getApplicationContext();
         final CharSequence text = "ENJOY";
         final int duration = Toast.LENGTH_SHORT;
