@@ -187,11 +187,13 @@
                 android:id="@+id/activity_main_btn_compress"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@drawable/custom_button"
                 android:layout_weight="1"
-                android:background="#BFB4B4"
-                android:foregroundTint="#0BF814"
-                android:text="@string/compress"
-                android:textColor="#E8E2E0" />
+                android:text="Compress"
+                android:backgroundTint="#4BFF56"
+                android:scaleType="fitCenter"
+                android:textColor="#F8F4F4" />
+
         </LinearLayout>
 
     </LinearLayout>
