@@ -2,9 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/rounded_corner"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/rounded_corner"
+    android:backgroundTint="#DBDBDB"
+    android:hapticFeedbackEnabled="true"
     tools:context=".ImageCropping">
 
     <ImageView
@@ -28,6 +30,7 @@
         android:background="@drawable/rounded_corner"
         android:elegantTextHeight="true"
         android:elevation="50dp"
+        android:hapticFeedbackEnabled="true"
         android:text="Pick Image"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/CropedImage"
@@ -44,6 +47,7 @@
         android:background="@drawable/rounded_corner"
         android:elegantTextHeight="true"
         android:elevation="100dp"
+        android:hapticFeedbackEnabled="true"
         android:text="Save"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
