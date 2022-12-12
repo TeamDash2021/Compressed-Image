@@ -7,42 +7,35 @@
     android:background="@drawable/gradient_back">
 
 
-
-
-
     <ImageButton
         android:id="@+id/compressButton"
-        android:layout_width="167dp"
-        android:layout_height="180dp"
+        android:layout_width="189dp"
+        android:layout_height="203dp"
         android:background="@drawable/custom_button"
         android:backgroundTint="#D507450B"
         android:elevation="200dp"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.986"
+        app:layout_constraintHorizontal_bias="0.96"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.257"
+        app:layout_constraintVertical_bias="0.146"
         app:srcCompat="@drawable/compress"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <ImageButton
-        android:id="@+id/cropButton"
-        android:layout_width="169dp"
-        android:layout_height="162dp"
-        android:background="@drawable/custom_button"
-        android:backgroundTint="#D8507152"
-        android:elevation="200dp"
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="196dp"
+        android:layout_height="196dp"
+        android:elevation="300dp"
         android:scaleType="centerInside"
+        android:src="@drawable/gif_cmp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.071"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.695"
-        app:srcCompat="@drawable/crop1"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintVertical_bias="0.155" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -91,17 +84,64 @@
 
     </LinearLayout>
 
+    <ImageButton
+        android:id="@+id/mybtn"
+        android:layout_width="189dp"
+        android:layout_height="203dp"
+        android:background="@drawable/custom_button"
+        android:backgroundTint="#D507450B"
+        android:elevation="200dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.995"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.901"
+        app:srcCompat="@drawable/isetting1"
+        tools:ignore="SpeakableTextPresentCheck" />
+
     <pl.droidsonroids.gif.GifImageView
-        android:layout_width="208dp"
-        android:layout_height="204dp"
+        android:layout_width="196dp"
+        android:layout_height="196dp"
         android:elevation="300dp"
         android:scaleType="centerInside"
-        android:src="@drawable/gif_cmp"
+        android:src="@drawable/gif_crop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.994"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.523" />
+
+    <ImageButton
+        android:id="@+id/cropButton"
+        android:layout_width="198dp"
+        android:layout_height="194dp"
+        android:background="@drawable/custom_button"
+        android:backgroundTint="#D8507152"
+        android:elevation="200dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.523"
+        app:srcCompat="@drawable/crop1"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="196dp"
+        android:layout_height="196dp"
+        android:elevation="300dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/gif_about"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.265" />
+        app:layout_constraintVertical_bias="0.902" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
