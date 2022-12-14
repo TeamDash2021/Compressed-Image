@@ -11,9 +11,10 @@
 
     <ImageView
         android:id="@+id/CropedImage"
-        android:layout_width="375dp"
-        android:layout_height="485dp"
+        android:layout_width="382dp"
+        android:layout_height="421dp"
         android:background="@drawable/rounded_corner"
+        android:backgroundTint="#FFFFFF"
         android:elevation="200dp"
         android:fadingEdgeLength="7dp"
         app:layout_constraintBottom_toBottomOf="parent"
