@@ -8,6 +8,22 @@
     android:orientation="vertical">
 
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:elegantTextHeight="true"
+        android:elevation="300dp"
+        android:fontFamily="@font/bungee_inline"
+        android:includeFontPadding="false"
+        android:paddingTop="15dp"
+        android:text="ShrinkPic"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textIsSelectable="false"
+        android:textSize="34sp"
+        android:textStyle="bold" />
 
     <TableRow
         android:layout_width="match_parent"
@@ -32,7 +48,8 @@
             android:layout_weight="1"
             android:background="@drawable/custom_button"
             android:backgroundTint="#D507450B"
-            android:elevation="200dp"
+            android:elevation="300dp"
+            android:hapticFeedbackEnabled="true"
             android:scaleType="centerInside"
             app:srcCompat="@drawable/compress"
             tools:ignore="SpeakableTextPresentCheck" />
@@ -61,7 +78,8 @@
             android:layout_weight="1"
             android:background="@drawable/custom_button"
             android:backgroundTint="#D8507152"
-            android:elevation="200dp"
+            android:elevation="300dp"
+            android:hapticFeedbackEnabled="true"
             android:scaleType="centerInside"
             app:srcCompat="@drawable/crop1"
             tools:ignore="SpeakableTextPresentCheck" />
@@ -90,7 +108,8 @@
             android:layout_weight="1"
             android:background="@drawable/custom_button"
             android:backgroundTint="#D507450B"
-            android:elevation="200dp"
+            android:elevation="300dp"
+            android:hapticFeedbackEnabled="true"
             android:scaleType="centerInside"
             app:srcCompat="@drawable/isetting1"
             tools:ignore="SpeakableTextPresentCheck" />
