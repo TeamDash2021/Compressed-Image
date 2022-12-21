@@ -122,7 +122,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1.5"
-        android:elevation="100dp"
+        android:background="#CCCCCC"
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
@@ -130,9 +130,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:layout_weight="0"
             android:background="@drawable/rounded_corner"
-            android:elevation="50dp"
+            android:backgroundTint="#FFFFFF"
             app:boxBackgroundColor="#A52121"
             app:boxStrokeColor="#00A630"
             app:layout_constraintLeft_toLeftOf="parent"
