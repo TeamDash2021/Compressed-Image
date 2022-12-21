@@ -53,9 +53,10 @@ public class ImageCropping extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                try {
                 BitmapDrawable drawable = (BitmapDrawable) imageView.getDrawable();
                 Bitmap bitmap = drawable.getBitmap();
-                try {
+
                     String root = Environment.getExternalStorageDirectory().toString();
                     File file = new File(root + "/Pictures/Cropped Images/myImagesDGS.jpg");
 
@@ -65,7 +66,7 @@ public class ImageCropping extends AppCompatActivity {
                     out.close();
                     Toast.makeText(ImageCropping.this,"Image Saved",Toast.LENGTH_SHORT).show();
                 } catch (Exception ex) {
-                    Toast.makeText(ImageCropping.this,ex.getMessage(),Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ImageCropping.this,"Please select an image first",Toast.LENGTH_SHORT).show();
                 }
             }
         });
