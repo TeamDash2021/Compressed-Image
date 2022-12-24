@@ -37,7 +37,13 @@ public class ImageCropping extends AppCompatActivity {
         pickButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startCropActivity();
+                try {
+                    startCropActivity();
+                }
+                catch (Exception e)
+                {
+                    Toast.makeText(ImageCropping.this,e.getMessage(),Toast.LENGTH_SHORT).show();
+                }
             }
         });
         try{
