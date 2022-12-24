@@ -1,14 +1,12 @@
 package com.custom.compressimage;
 
 import static android.os.Environment.DIRECTORY_PICTURES;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
+
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -16,7 +14,6 @@ import android.os.Bundle;
 import android.os.ParcelFileDescriptor;
 import android.os.StrictMode;
 import android.provider.MediaStore;
-import android.text.TextUtils;
 import android.text.format.Formatter;
 import android.util.Log;
 import android.view.View;
@@ -26,16 +23,19 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+
 import java.io.Closeable;
+import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
-import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -48,9 +48,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public static final String DATE_FORMAT = "yyyyMMdd_HHmm";
     //public static final String IMAGE_DIRECTORY = "ImageScalling";
-
-    private static final String SCHEME_FILE = "file";
-    private static final String SCHEME_CONTENT = "content";
 
     ImageButton btnGallery, btnCamera;
     Button btnCompress;
@@ -219,7 +216,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             BitmapFactory.decodeStream(fis, null, o);
             fis.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            Toast.makeText(MainActivity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
         }
 
         int IMAGE_MAX_SIZE = qualityVal;
@@ -256,53 +253,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     /**
-     * This is useful when an image is available in sdcard physically.
-     *
-     * @param uriPhoto
-     * @return
-     */
-    public String getPathFromUri(Uri uriPhoto) {
-        if (uriPhoto == null)
-            return null;
-
-        if (SCHEME_FILE.equals(uriPhoto.getScheme())) {
-            return uriPhoto.getPath();
-        } else if (SCHEME_CONTENT.equals(uriPhoto.getScheme())) {
-            final String[] filePathColumn = {MediaStore.MediaColumns.DATA,
-                    MediaStore.MediaColumns.DISPLAY_NAME};
-            try (Cursor cursor = getContentResolver().query(uriPhoto, filePathColumn, null, null, null)) {
-                if (cursor != null && cursor.moveToFirst()) {
-                    final int columnIndex = (uriPhoto.toString()
-                            .startsWith("content://com.google.android.gallery3d")) ? cursor
-                            .getColumnIndex(MediaStore.MediaColumns.DISPLAY_NAME)
-                            : cursor.getColumnIndex(MediaStore.MediaColumns.DATA);
-
-                    // Picasa images on API 13+
-                    if (columnIndex != -1) {
-                        String filePath = cursor.getString(columnIndex);
-                        if (!TextUtils.isEmpty(filePath)) {
-                            return filePath;
-                        }
-                    }
-                }
-            } catch (IllegalArgumentException e) {
-                // Nothing we can do
-                Log.d(TAG, "IllegalArgumentException");
-                Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-            } catch (SecurityException ignored) {
-                Log.d(TAG, "SecurityException");
-                // Nothing we can do
-                ignored.printStackTrace();
-            }
-        }
-        return null;
-    }
-
-    /**
      * This is useful when an image is not available in sdcard physically but it displays into photos application via google drive(Google Photos) and also for if image is available in sdcard physically.
      * @param uriPhoto
      * @return
      */
+
     public String getPathFromGooglePhotosUri(Uri uriPhoto) {
         if (uriPhoto == null)
             return null;
