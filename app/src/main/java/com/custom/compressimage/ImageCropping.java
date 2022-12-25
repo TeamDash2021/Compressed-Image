@@ -17,9 +17,12 @@ import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class ImageCropping extends AppCompatActivity {
 
+    public static final String DATE_FORMAT = "yyyyMMdd_HHmm";
     ImageView imageView;
     Button save,pickButton;
     Uri resultUri;
@@ -30,6 +33,7 @@ public class ImageCropping extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_cropping);
 
+        SimpleDateFormat dateFormatter = new SimpleDateFormat(DATE_FORMAT);
         save = findViewById(R.id.saveImage);
         pickButton = findViewById(R.id.pickCropping);
         imageView = findViewById(R.id.CropedImage);
@@ -64,7 +68,7 @@ public class ImageCropping extends AppCompatActivity {
                     Bitmap bitmap = drawable.getBitmap();
 
                     String root = Environment.getExternalStorageDirectory().toString();
-                    File file = new File(root + "/Pictures/Cropped Images/myImagesDGS.jpg");
+                    File file = new File(root + "/Pictures/Cropped Images/img_"+dateFormatter.format(new Date())+".jpeg");
 
                     FileOutputStream out = new FileOutputStream(file);
                     bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
@@ -72,7 +76,7 @@ public class ImageCropping extends AppCompatActivity {
                     out.close();
                     Toast.makeText(ImageCropping.this,"Image Saved",Toast.LENGTH_SHORT).show();
                 } catch (Exception ex) {
-                    Toast.makeText(ImageCropping.this,"Please select an image first",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ImageCropping.this,ex.getMessage(),Toast.LENGTH_SHORT).show();
                 }
             }
         });
