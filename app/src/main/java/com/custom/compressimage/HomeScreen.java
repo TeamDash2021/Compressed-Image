@@ -24,8 +24,6 @@ public class HomeScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
         getWindow().setExitTransition(new Explode());
-        ActivityCompat.requestPermissions(HomeScreen.this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
-        ActivityCompat.requestPermissions(HomeScreen.this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},1);
 
         setContentView(R.layout.homescreen_activity);
 

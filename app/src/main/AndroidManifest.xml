@@ -8,15 +8,16 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.CAMERA" />
 
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <uses-feature android:name="android.hardware.camera.autofocus" />
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
 
-    <uses-permission
-        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-        tools:ignore="ScopedStorage" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -30,8 +31,7 @@
         android:theme="@style/Theme.CompressImage"
         tools:targetApi="r">
         <activity
-            android:name=".ImageCropping"
-            android:exported="false" />
+            android:name=".ImageCropping"/>
         <activity android:name=".MainActivity" />
         <activity android:name=".HomeScreen" />
         <activity
