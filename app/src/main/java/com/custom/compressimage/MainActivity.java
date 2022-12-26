@@ -11,7 +11,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.ParcelFileDescriptor;
 import android.os.StrictMode;
 import android.provider.MediaStore;
@@ -95,7 +94,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 
         try{
-        file = new File(android.os.Environment.getExternalStorageDirectory() + "/" + DIRECTORY_PICTURES, "/Compressed Image");
+        file = new File(android.os.Environment.getExternalStorageDirectory()
+                + "/" + DIRECTORY_PICTURES, "/Compressed Image");
         if (!file.exists()) {
             file.mkdirs();
         }}
@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 StrictMode.setVmPolicy(builder.build());
 
                 destFile = new File(file, "img_"
-                        + dateFormatter.format(new Date()) + ".jpg");
+                        + dateFormatter.format(new Date()) + ".jpeg");
                 imageCaptureUri = Uri.fromFile(destFile);
 
                 Intent intentCamera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
