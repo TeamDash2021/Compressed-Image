@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Compress Image</string>
+    <string name="app_name">ShrinkPic</string>
     <string name="load_from_gallery">Load From Gallery</string>
     <string name="load_from_camera">Load From Camera</string>
     <string name="compress">Compress</string>
