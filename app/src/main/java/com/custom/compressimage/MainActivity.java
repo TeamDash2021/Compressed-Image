@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 
         try{
-        file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM), "Compressed Image");
+        file = new File(android.os.Environment.getExternalStorageDirectory() + "/" + DIRECTORY_PICTURES, "/Compressed Image");
         if (!file.exists()) {
             file.mkdirs();
         }}
@@ -192,7 +192,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         e.printStackTrace();
                     }
                     break;
-
                 case PICK_CAMERA_IMAGE:
                     Log.d(TAG + ".PICK_CAMERA_IMAGE", "Selected image uri path :" + imageCaptureUri);
                     img.setImageURI(imageCaptureUri);
