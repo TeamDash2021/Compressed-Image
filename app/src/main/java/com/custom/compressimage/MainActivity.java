@@ -1,8 +1,6 @@
 package com.custom.compressimage;
 
 import static android.os.Environment.DIRECTORY_PICTURES;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -26,16 +24,17 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import java.io.Closeable;
+import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
-import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -142,7 +141,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 StrictMode.setVmPolicy(builder.build());
 
                 destFile = new File(file, "img_"
-                        + dateFormatter.format(new Date()) + ".jpeg");
+                        + dateFormatter.format(new Date()) + ".jpg");
                 imageCaptureUri = Uri.fromFile(destFile);
 
                 Intent intentCamera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
