@@ -1,10 +1,22 @@
 <resources>
-    <string name="app_name">Compress Image</string>
+    <string name="app_name">ShrinkPic</string>
     <string name="load_from_gallery">Load From Gallery</string>
     <string name="load_from_camera">Load From Camera</string>
     <string name="compress">Compress</string>
     <string name="original_image">Original Image</string>
     <string name="compress_image">Compressed Image</string>
+    <string name="croppedimage">CroppedImage</string>
+    <string name="pick_image">Pick Image</string>
+    <string name="save">Save</string>
+    <string name="image_cropping">Image Cropping</string>
+    <string name="compressbutton">CompressButton</string>
+    <string name="cropbutton">CropButton</string>
+    <string name="ibutton">iButton</string>
+    <string name="size">Size:</string>
+    <string name="choose_image_quality">Choose Image Quality</string>
+    <string name="camerabutton">CameraButton</string>
+    <string name="gallerybutton">GalleryButton</string>
+    <string name="splashscreen">SplashScreen</string>
     <string-array name="imgquality">
         <item>2401</item>
         <item>1920</item>
