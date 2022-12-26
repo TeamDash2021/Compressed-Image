@@ -8,13 +8,15 @@ import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
@@ -27,7 +29,6 @@ public class ImageCropping extends AppCompatActivity {
     Button save,pickButton;
     Uri resultUri;
     File file;
-    Bitmap b;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,46 +39,39 @@ public class ImageCropping extends AppCompatActivity {
         pickButton = findViewById(R.id.pickCropping);
         imageView = findViewById(R.id.CropedImage);
 
-        pickButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    startCropActivity();
-                }
-                catch (Exception e)
-                {
-                    Toast.makeText(ImageCropping.this,e.getMessage(),Toast.LENGTH_SHORT).show();
-                }
+        pickButton.setOnClickListener(view -> {
+            try {
+                startCropActivity();
+            }
+            catch (Exception e)
+            {
+                Toast.makeText(ImageCropping.this,e.getMessage(),Toast.LENGTH_SHORT).show();
             }
         });
         try{
-            file = new File(android.os.Environment.getExternalStorageDirectory()
-                    + "/" + DIRECTORY_PICTURES, "/Cropped Images");
+            file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM), "Cropped Images");
             if (!file.exists()) {
                 file.mkdirs();
             }}
         catch(Error e){
             Toast.makeText(ImageCropping.this,e.getMessage(),Toast.LENGTH_SHORT).show();
         }
-        save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        save.setOnClickListener(view -> {
 
-                try {
-                    BitmapDrawable drawable = (BitmapDrawable) imageView.getDrawable();
-                    Bitmap bitmap = drawable.getBitmap();
+            try {
+                BitmapDrawable drawable = (BitmapDrawable) imageView.getDrawable();
+                Bitmap bitmap = drawable.getBitmap();
 
-                    String root = Environment.getExternalStorageDirectory().toString();
-                    File file = new File(root + "/Pictures/Cropped Images/img_"+dateFormatter.format(new Date())+".jpeg");
+                String root = Environment.getExternalStorageDirectory().toString();
+                File file = new File(root + "/DCIM/Cropped Images/img_"+ dateFormatter.format(new Date())+".jpg");
 
-                    FileOutputStream out = new FileOutputStream(file);
-                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
-                    out.flush();
-                    out.close();
-                    Toast.makeText(ImageCropping.this,"Image Saved",Toast.LENGTH_SHORT).show();
-                } catch (Exception ex) {
-                    Toast.makeText(ImageCropping.this,ex.getMessage(),Toast.LENGTH_SHORT).show();
-                }
+                FileOutputStream out = new FileOutputStream(file);
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
+                out.flush();
+                out.close();
+                Toast.makeText(ImageCropping.this,"Image Saved",Toast.LENGTH_SHORT).show();
+            } catch (Exception ex) {
+                Toast.makeText(ImageCropping.this,ex.getMessage(),Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -101,6 +95,7 @@ public class ImageCropping extends AppCompatActivity {
                 imageView.setImageURI(resultUri);
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                 Exception error = result.getError();
+                Toast.makeText(ImageCropping.this,error.getMessage(),Toast.LENGTH_SHORT).show();
             }
         }
     }
