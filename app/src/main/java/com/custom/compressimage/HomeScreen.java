@@ -29,8 +29,8 @@ public class HomeScreen extends AppCompatActivity {
         myVib = (Vibrator) this.getSystemService(VIBRATOR_SERVICE);
         compress = findViewById(R.id.compressButton);
         crop = findViewById(R.id.cropButton);
+        isettings = findViewById(R.id.setting_btn);
 
-        //isettings = findViewById(R.id.setting_btn);
         final Context context = getApplicationContext();
         final CharSequence text = "ENJOY";
         final int duration = Toast.LENGTH_SHORT;
@@ -41,7 +41,7 @@ public class HomeScreen extends AppCompatActivity {
             ActivityOptions options = ActivityOptions
                     .makeSceneTransitionAnimation(HomeScreen.this);
             startActivity(intent, options.toBundle());
-            myVib.vibrate(50);
+            myVib.vibrate(30);
             Toast toast = Toast.makeText(context, text, duration);
             toast.show();
         });
@@ -54,25 +54,24 @@ public class HomeScreen extends AppCompatActivity {
                 ActivityOptions options = ActivityOptions
                         .makeSceneTransitionAnimation(HomeScreen.this);
                 startActivity(intent, options.toBundle());
-                myVib.vibrate(50);
+                myVib.vibrate(30);
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
             }
         });
-        /*
+
         isettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(InfoGuide_act.this, Third_act.class);
+                Intent intent = new Intent(HomeScreen.this, AboutActivity.class);
                 ActivityOptions options = ActivityOptions
-                        .makeSceneTransitionAnimation(InfoGuide_act.this);
+                        .makeSceneTransitionAnimation(HomeScreen.this);
                 startActivity(intent, options.toBundle());
-                myVib.vibrate(50);
+                myVib.vibrate(30);
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
             }
         });
-*/
     }
 
 }
