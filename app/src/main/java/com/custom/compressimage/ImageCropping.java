@@ -60,8 +60,8 @@ public class ImageCropping extends AppCompatActivity {
             public void onClick(View view) {
 
                 try {
-                    BitmapDrawable drawable = (BitmapDrawable) imageView.getDrawable();
-                    Bitmap bitmap = drawable.getBitmap();
+                BitmapDrawable drawable = (BitmapDrawable) imageView.getDrawable();
+                Bitmap bitmap = drawable.getBitmap();
 
                     String root = Environment.getExternalStorageDirectory().toString();
                     File file = new File(root + "/Pictures/Cropped Images/myImagesDGS.jpg");
@@ -76,7 +76,7 @@ public class ImageCropping extends AppCompatActivity {
                 }
             }
         });
-
+        
     }
 
 
