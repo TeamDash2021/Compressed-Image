@@ -7,32 +7,219 @@
     tools:context=".AboutActivity"
     tools:ignore="MergeRootFrame">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="165dp"
-        android:layout_marginTop="205dp"
-        android:layout_marginEnd="175dp"
-        android:layout_marginBottom="507dp"
-        android:text="hello_world" />
-
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="330dp"
-        android:layout_marginEnd="46dp"
-        android:layout_marginBottom="350dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="815dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"/>
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="805dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="86dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="About the app"
+                android:textColor="#000000"
+                android:textSize="48sp" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ShrinkPic is a image compression and croping application. there are multiple options to select the quality of compressed image. if you want to take imediate image for compression then you can choose camera option to take picture and then compress it in quality you want for your image. size of compressed image will be based on quality that you select for compression."
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="34sp" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="How to use it..."
+                android:textColor="#000000"
+                android:textSize="48sp" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="there are two services this app provides first is Image Compression and second is Image croping"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="When you are in home screen you will be having two buttons one is for image compression and another is for cropping"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/compressButton"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/custom_button"
+                    android:backgroundTint="#E4FFFFFF"
+                    android:contentDescription="@string/compressbutton"
+                    android:elevation="300dp"
+                    android:hapticFeedbackEnabled="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/compress"
+                    tools:ignore="SpeakableTextPresentCheck" />
+                <ImageButton
+                    android:id="@+id/cropButton"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/custom_button"
+                    android:backgroundTint="#9FEBBB"
+                    android:contentDescription="@string/cropbutton"
+                    android:elevation="300dp"
+                    android:hapticFeedbackEnabled="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/crop1"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Image Compression"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="First choose image which you want to compress by clicking on following icon"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/activity_main_btn_load_from_gallery"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:background="@drawable/custom_button"
+                android:backgroundTint="#0CC3FE"
+                android:contentDescription="@string/gallerybutton"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_action_name"
+                android:text="@string/load_from_gallery"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="select quality for your image by clicking on dropdown menu"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                ads:srcCompat="@drawable/img" />
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Click on compress button to compress and save you image"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+            <Button
+                android:id="@+id/activity_main_btn_compress"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:background="@drawable/custom_button"
+                android:backgroundTint="#4BFF56"
+                android:elegantTextHeight="true"
+                android:scaleType="fitCenter"
+                android:text="@string/compress"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="34sp" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Where to find Images"
+                android:textColor="#000000"
+                android:textSize="40sp" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Compressed and cropped images can be found inside DCIM folder of your phone storage directory."
+                android:textColor="#000000"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="For Compressed Image : Phone Storage -> DCIM -> Compressed Image"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="For Cropped Image : Phone Storage -> DCIM -> Cropped Image"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>
