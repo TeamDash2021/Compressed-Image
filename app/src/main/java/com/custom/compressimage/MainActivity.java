@@ -157,7 +157,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     e.printStackTrace();
                 }
                 Toast.makeText(MainActivity.this, "Compressed & Saved",Toast.LENGTH_SHORT).show();
-                Toast.makeText(MainActivity.this,String.valueOf(qualityVal),Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this,String.valueOf(qualityVal),Toast.LENGTH_SHORT).show();
                 break;
         }}
         catch (Error e){
@@ -252,7 +252,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return b;
     }
 
-    /**
+    /*
      * This is useful when an image is available in sdcard physically.
      *
      * @param uriPhoto

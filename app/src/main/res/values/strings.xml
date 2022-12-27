@@ -17,6 +17,9 @@
     <string name="camerabutton">CameraButton</string>
     <string name="gallerybutton">GalleryButton</string>
     <string name="splashscreen">SplashScreen</string>
+    <string name="location_cropped_image"><![CDATA[For Cropped Image : Phone Storage -> Pictures -> Cropped Image]]></string>
+    <string name="location_compressed_image"><![CDATA[For Compressed Image : Phone Storage -> Pictures -> Compressed Image]]></string>
+    <string name="WhereToFind">Compressed and cropped images can be found inside Picture folder of your phone storage directory.</string>
     <string-array name="imgquality">
         <item>2401</item>
         <item>1920</item>

@@ -50,7 +50,7 @@ public class ImageCropping extends AppCompatActivity {
             }
         });
         try{
-            file = new File(android.os.Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM), "Cropped Images");
+            file = new File(android.os.Environment.getExternalStorageDirectory() + "/" + DIRECTORY_PICTURES, "/Cropped Images");
             if (!file.exists()) {
                 file.mkdirs();
             }}
@@ -64,7 +64,7 @@ public class ImageCropping extends AppCompatActivity {
             Bitmap bitmap = drawable.getBitmap();
 
                 String root = Environment.getExternalStorageDirectory().toString();
-                File file = new File(root + "/DCIM/Cropped Images/img_"+dateFormatter.format(new Date())+".jpg");
+                File file = new File(root + "/Pictures/Cropped Images/img_"+dateFormatter.format(new Date())+".jpg");
 
                 FileOutputStream out = new FileOutputStream(file);
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
@@ -96,6 +96,7 @@ public class ImageCropping extends AppCompatActivity {
                 imageView.setImageURI(resultUri);
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                 Exception error = result.getError();
+                Toast.makeText(ImageCropping.this,error.getMessage(),Toast.LENGTH_SHORT).show();
             }
         }
     }

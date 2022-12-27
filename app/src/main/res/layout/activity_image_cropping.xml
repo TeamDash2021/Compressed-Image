@@ -38,10 +38,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/CropedImage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.676" />
+        app:layout_constraintVertical_bias="0.751" />
 
     <Button
         android:id="@+id/saveImage"
@@ -59,7 +58,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CropedImage"
-        app:layout_constraintVertical_bias="0.373" />
+        app:layout_constraintVertical_bias="0.353" />
 
     <TextView
         android:id="@+id/textView3"
@@ -70,12 +69,12 @@
         android:text="@string/image_cropping"
         android:textColor="#000000"
         android:textIsSelectable="false"
-        android:textSize="24sp"
+        android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/pickCropping"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.442" />
+        app:layout_constraintVertical_bias="0.445" />
 </androidx.constraintlayout.widget.ConstraintLayout>
