@@ -19,6 +19,8 @@ import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class ImageCropping extends AppCompatActivity {
 
@@ -26,11 +28,14 @@ public class ImageCropping extends AppCompatActivity {
     Button save,pickButton;
     Uri resultUri;
     File file;
+    SimpleDateFormat dateFormatter;
+    public static final String DATE_FORMAT = "yyyyMMdd_HHmm";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_cropping);
 
+        dateFormatter = new SimpleDateFormat(DATE_FORMAT);
         save = findViewById(R.id.saveImage);
         pickButton = findViewById(R.id.pickCropping);
         imageView = findViewById(R.id.CropedImage);
@@ -59,7 +64,7 @@ public class ImageCropping extends AppCompatActivity {
             Bitmap bitmap = drawable.getBitmap();
 
                 String root = Environment.getExternalStorageDirectory().toString();
-                File file = new File(root + "/DCIM/Cropped Images/myImagesDGS.jpg");
+                File file = new File(root + "/DCIM/Cropped Images/img_"+dateFormatter.format(new Date())+".jpg");
 
                 FileOutputStream out = new FileOutputStream(file);
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);

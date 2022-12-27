@@ -129,8 +129,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         try{
         switch (v.getId()) {
             case R.id.activity_main_btn_load_from_gallery:
-                ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
-                ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},1);
                 Intent intentGalley = new Intent(Intent.ACTION_PICK);
                 intentGalley.setType("image/*");
                 startActivityForResult(intentGalley, PICK_GALLERY_IMAGE);
