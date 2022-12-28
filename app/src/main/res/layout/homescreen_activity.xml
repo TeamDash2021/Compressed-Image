@@ -16,7 +16,7 @@
         android:elegantTextHeight="true"
         android:elevation="300dp"
         android:fontFamily="@font/bungee_inline"
-        android:includeFontPadding="true"
+        android:includeFontPadding="false"
         android:paddingStart="20dp"
         android:paddingLeft="20dp"
         android:paddingTop="20dp"
