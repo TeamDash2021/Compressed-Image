@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".AboutActivity"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/gradient_back"
     android:orientation="vertical">
 
@@ -124,5 +126,14 @@
             app:srcCompat="@drawable/isetting1"
             tools:ignore="SpeakableTextPresentCheck" />
     </TableRow>
+
+    <FrameLayout
+        android:id="@+id/ad_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-8529411231000751/5583136226"/>
 
 </LinearLayout>
