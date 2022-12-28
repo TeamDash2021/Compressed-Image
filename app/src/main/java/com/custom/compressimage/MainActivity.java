@@ -1,6 +1,7 @@
 package com.custom.compressimage;
 
 import static android.os.Environment.DIRECTORY_PICTURES;
+
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -18,7 +19,6 @@ import android.text.TextUtils;
 import android.text.format.Formatter;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -26,8 +26,10 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+
 import java.io.Closeable;
 import java.io.File;
 import java.io.FileDescriptor;
@@ -86,13 +88,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         autoCompleteTextView.setAdapter(staticAdapter);
 
 
-        autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String selectedItem=autoCompleteTextView.getAdapter().getItem(position).toString();
-                qualityVal = Integer.parseInt(selectedItem);
-                Toast.makeText(getApplicationContext(),selectedItem ,  Toast.LENGTH_SHORT).show();
-            }
+        autoCompleteTextView.setOnItemClickListener((parent, view, position, id) -> {
+            String selectedItem=autoCompleteTextView.getAdapter().getItem(position).toString();
+            qualityVal = Integer.parseInt(selectedItem);
+            Toast.makeText(getApplicationContext(),selectedItem ,  Toast.LENGTH_SHORT).show();
         });
 
         try{
@@ -250,49 +249,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Toast.makeText(MainActivity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
         }
         return b;
-    }
-
-    /*
-     * This is useful when an image is available in sdcard physically.
-     *
-     * @param uriPhoto
-     * @return
-     */
-    public String getPathFromUri(Uri uriPhoto) {
-        if (uriPhoto == null)
-            return null;
-
-        if (SCHEME_FILE.equals(uriPhoto.getScheme())) {
-            return uriPhoto.getPath();
-        } else if (SCHEME_CONTENT.equals(uriPhoto.getScheme())) {
-            final String[] filePathColumn = {MediaStore.MediaColumns.DATA,
-                    MediaStore.MediaColumns.DISPLAY_NAME};
-            try (Cursor cursor = getContentResolver().query(uriPhoto, filePathColumn, null, null, null)) {
-                if (cursor != null && cursor.moveToFirst()) {
-                    final int columnIndex = (uriPhoto.toString()
-                            .startsWith("content://com.google.android.gallery3d")) ? cursor
-                            .getColumnIndex(MediaStore.MediaColumns.DISPLAY_NAME)
-                            : cursor.getColumnIndex(MediaStore.MediaColumns.DATA);
-
-                    // Picasa images on API 13+
-                    if (columnIndex != -1) {
-                        String filePath = cursor.getString(columnIndex);
-                        if (!TextUtils.isEmpty(filePath)) {
-                            return filePath;
-                        }
-                    }
-                }
-            } catch (IllegalArgumentException e) {
-                // Nothing we can do
-                Log.d(TAG, "IllegalArgumentException");
-                Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-            } catch (SecurityException e) {
-                Log.d(TAG, "SecurityException");
-                // Nothing we can do
-                e.printStackTrace();
-            }
-        }
-        return null;
     }
 
     /*
