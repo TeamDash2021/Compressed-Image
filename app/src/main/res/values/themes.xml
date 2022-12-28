@@ -1,6 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.CompressImage" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.CompressImage" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowEnterTransition">@transition/fade</item>
+        <item name="android:windowExitTransition">@transition/explode</item>
         <!-- Primary brand color. -->
         <item name="colorPrimary">#FF0CC3FE</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -16,7 +19,7 @@
 
     <style name="roundedImageViewRounded">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">10%</item>
+        <item name="cornerSize">15%</item>
     </style>
 
 </resources>
