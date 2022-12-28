@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".AboutActivity"
     tools:ignore="MergeRootFrame">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,7 +17,8 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
         android:layout_marginEnd="0dp"
-        android:layout_marginBottom="0dp">
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/rounded_corner">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -39,11 +41,11 @@
                 android:textColor="#000000"
                 android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/textView8"
+            <View
+                android:id="@+id/divider"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="34sp" />
+                android:layout_height="41dp"
+                android:background="?android:attr/listDivider" />
 
             <TextView
                 android:id="@+id/textView9"
@@ -229,6 +231,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />
+        ads:adUnitId="ca-app-pub-8529411231000751/3027650295" />
 
 </RelativeLayout>
