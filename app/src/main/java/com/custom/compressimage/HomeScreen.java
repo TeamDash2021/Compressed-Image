@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.transition.Explode;
-import android.view.View;
 import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -37,7 +36,6 @@ public class HomeScreen extends AppCompatActivity {
         isettings = findViewById(R.id.setting_btn);
 
         final Context context = getApplicationContext();
-        final CharSequence text = "ENJOY";
         final int duration = Toast.LENGTH_SHORT;
 
 
@@ -47,35 +45,29 @@ public class HomeScreen extends AppCompatActivity {
                     .makeSceneTransitionAnimation(HomeScreen.this);
             startActivity(intent, options.toBundle());
             myVib.vibrate(30);
-            Toast toast = Toast.makeText(context, text, duration);
+            Toast toast = Toast.makeText(context, "Happy Compressing", duration);
             toast.show();
         });
 
 
-        crop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeScreen.this, ImageCropping.class);
-                ActivityOptions options = ActivityOptions
-                        .makeSceneTransitionAnimation(HomeScreen.this);
-                startActivity(intent, options.toBundle());
-                myVib.vibrate(30);
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
-            }
+        crop.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeScreen.this, ImageCropping.class);
+            ActivityOptions options = ActivityOptions
+                    .makeSceneTransitionAnimation(HomeScreen.this);
+            startActivity(intent, options.toBundle());
+            myVib.vibrate(30);
+            Toast toast = Toast.makeText(context, "Let's Crop", duration);
+            toast.show();
         });
 
-        isettings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeScreen.this, AboutActivity.class);
-                ActivityOptions options = ActivityOptions
-                        .makeSceneTransitionAnimation(HomeScreen.this);
-                startActivity(intent, options.toBundle());
-                myVib.vibrate(30);
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
-            }
+        isettings.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeScreen.this, AboutActivity.class);
+            ActivityOptions options = ActivityOptions
+                    .makeSceneTransitionAnimation(HomeScreen.this);
+            startActivity(intent, options.toBundle());
+            myVib.vibrate(30);
+            Toast toast = Toast.makeText(context, "Enjoy", duration);
+            toast.show();
         });
     }
 

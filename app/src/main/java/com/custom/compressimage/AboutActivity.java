@@ -3,6 +3,7 @@ package com.custom.compressimage;
 import android.os.Bundle;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.ads.AdRequest;
@@ -20,7 +21,7 @@ import java.util.Arrays;
 public class AboutActivity extends AppCompatActivity {
 
     private AdView adView;
-    private static final String TAG = "MyActivity";
+    private static final String TAG = "AboutActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,7 @@ public class AboutActivity extends AppCompatActivity {
         // Initialize the Mobile Ads SDK.
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {}
+            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {}
         });
 
         // Set your test devices. Check your logcat output for the hashed device ID to

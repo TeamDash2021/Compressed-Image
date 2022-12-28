@@ -286,16 +286,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // Nothing we can do
                 Log.d(TAG, "IllegalArgumentException");
                 Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-            } catch (SecurityException ignored) {
+            } catch (SecurityException e) {
                 Log.d(TAG, "SecurityException");
                 // Nothing we can do
-                ignored.printStackTrace();
+                e.printStackTrace();
             }
         }
         return null;
     }
 
-    /**
+    /*
      * This is useful when an image is not available in sdcard physically but it displays into photos application via google drive(Google Photos) and also for if image is available in sdcard physically.
      * @param uriPhoto
      * @return
