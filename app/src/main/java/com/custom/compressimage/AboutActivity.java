@@ -20,8 +20,8 @@ import java.util.Arrays;
  */
 public class AboutActivity extends AppCompatActivity {
 
-    private AdView adView;
     private static final String TAG = "AboutActivity";
+    private AdView adView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

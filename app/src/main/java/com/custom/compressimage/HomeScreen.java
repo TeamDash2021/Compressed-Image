@@ -78,6 +78,11 @@ public class HomeScreen extends AppCompatActivity {
             ActivityOptions options = ActivityOptions
                     .makeSceneTransitionAnimation(HomeScreen.this);
             startActivity(intent, options.toBundle());
+            if (mInterstitialAd != null) {
+                mInterstitialAd.show(HomeScreen.this);
+            } else {
+                Log.d("TAG", "The interstitial ad wasn't ready yet.");
+            }
             myVib.vibrate(30);
             Toast toast = Toast.makeText(context, "Let's Crop", duration);
             toast.show();
