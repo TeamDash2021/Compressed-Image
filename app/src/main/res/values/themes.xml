@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Theme.CompressImage" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="android:windowActivityTransitions">true</item>

@@ -7,7 +7,6 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -15,7 +14,6 @@ import android.os.Bundle;
 import android.os.ParcelFileDescriptor;
 import android.os.StrictMode;
 import android.provider.MediaStore;
-import android.text.TextUtils;
 import android.text.format.Formatter;
 import android.util.Log;
 import android.view.View;
@@ -26,10 +24,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-
 import java.io.Closeable;
 import java.io.File;
 import java.io.FileDescriptor;
@@ -50,8 +46,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static final String DATE_FORMAT = "yyyyMMdd_HHmm";
     //public static final String IMAGE_DIRECTORY = "ImageScalling";
 
-    private static final String SCHEME_FILE = "file";
-    private static final String SCHEME_CONTENT = "content";
+    //private static final String SCHEME_FILE = "file";
+    //private static final String SCHEME_CONTENT = "content";
 
     ImageButton btnGallery, btnCamera;
     Button btnCompress;
@@ -149,8 +145,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.activity_main_btn_compress:
                 Bitmap bmp = decodeFile(destFile);
                 imgCompress.setImageBitmap(bmp);
-                try{
-                txtCompSize.setText("Size: " + Formatter.formatShortFileSize(this, destFile.length()));
+                 try{
+                     txtCompSize.setText("Size: " + Formatter.formatShortFileSize(this, destFile.length()));
                 txtOriginalSize.setText("Size: " + Formatter.formatShortFileSize(this, sourceFile.length()));}
                 catch(Exception e){
                     e.printStackTrace();

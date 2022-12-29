@@ -102,7 +102,7 @@
                     android:layout_height="150dp"
                     android:layout_weight="1"
                     android:background="@drawable/custom_button"
-                    android:backgroundTint="#E4FFFFFF"
+                    android:backgroundTint="#FBFBFB"
                     android:contentDescription="@string/compressbutton"
                     android:elevation="300dp"
                     android:hapticFeedbackEnabled="true"
